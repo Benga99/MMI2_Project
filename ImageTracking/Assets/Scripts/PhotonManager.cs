@@ -2,6 +2,7 @@ using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 /// <summary>
 /// This class handles connecting to the Photon cloud.
@@ -12,6 +13,7 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     /// This is a reference to the playerPrefab, that we have saved in our Resources folder. This will be spawned into the scene for each new client connecting.
     /// </summary>
     public GameObject playerPrefab;
+    public TextMeshProUGUI debugText;
 
     // Called when we start the application/scene.
     void Start()
@@ -41,7 +43,8 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         // This spawns the playerPrefab (our character) into the scene at the origin of the scene (0,0,0). 
-        PhotonNetwork.Instantiate(playerPrefab.name, Vector3.zero, Quaternion.identity);
+        //PhotonNetwork.Instantiate(playerPrefab.name, Vector3.zero, Quaternion.identity);
+        debugText.text = "Joined the room!";
     }
 
 }

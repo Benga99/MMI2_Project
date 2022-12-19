@@ -11,7 +11,8 @@ public class CanvasManager : MonoBehaviour
 
     public GameObject waitForConnectionText;
 
-    public HealthBar healthBar;
+    public HealthBar healthBarMe;
+    public HealthBar healthBarEnemy;
 
     private BulletManager bManager;
 
@@ -24,7 +25,18 @@ public class CanvasManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(healthBarEnemy == null)
+        {
+            var healths = FindObjectsOfType<HealthBar>();
+            foreach(var h in healths)
+            {
+                if(h.identifier == "enemy")
+                {
+                    healthBarEnemy = h;
+                    break;
+                }
+            }
+        }
     }
 
     public void PlayButtonPressed()
@@ -60,7 +72,9 @@ public class CanvasManager : MonoBehaviour
         winPanel.SetActive(false);
         gamePanel.SetActive(true);
         bManager.currentHealth = bManager.maxHealth;
-        healthBar.SetMaxHealth(bManager.maxHealth);
-        healthBar.SetHealth(bManager.maxHealth);
+        healthBarMe.SetMaxHealth(bManager.maxHealth);
+        healthBarMe.SetHealth(bManager.maxHealth);
+        healthBarEnemy.SetMaxHealth(bManager.maxHealth);
+        healthBarEnemy.SetHealth(bManager.maxHealth);
     }
 }

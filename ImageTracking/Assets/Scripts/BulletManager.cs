@@ -8,8 +8,9 @@ public class BulletManager : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject DirectionObject;
     public TextMeshProUGUI debugText;
-    public HealthBar healthBar;
-    
+    public HealthBar healthBarMe;
+    public HealthBar healthBarEnemy;
+
 
     public int maxHealth = 100;
     public int currentHealth;
@@ -24,14 +25,14 @@ public class BulletManager : MonoBehaviour
     {
         Application.targetFrameRate = 60;
         currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        healthBarMe.SetMaxHealth(maxHealth);
         canvasMan = FindObjectOfType<CanvasManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        //debugText.text = "healthBarEnemy is null: " + (healthBarEnemy == null).ToString();
     }
 
     public void ShootButtonPressed()
@@ -49,22 +50,31 @@ public class BulletManager : MonoBehaviour
                 TakeDamage(damage);
             }
         }
-
     }
 
     void TakeDamage(int damage)
     {
-        if(currentHealth >= damage)
+        debugText.text = "in TakeDamage";
+        if (healthBarEnemy.health >= damage)
         {
-            currentHealth -= damage;
-            healthBar.SetHealth(currentHealth);
+            //currentHealth -= damage;
+            debugText.text += "Hit Enemy";
+            healthBarEnemy.SetHealth(healthBarEnemy.health - damage);
         }
 
-        if (currentHealth <= 0)
+        if (healthBarEnemy.health <= 0)
+        {
+            canvasMan.ActivateGameWin();
+        }
+        else if(healthBarMe.health <= 0)
         {
             canvasMan.ActivateGameLose();
-            //activate game win for the other player
         }
+    }
+
+    public void SetHealthBarEnemy(HealthBar h)
+    {
+        healthBarEnemy = h;
     }
 
     private IEnumerator moveBullet(GameObject bullet)
