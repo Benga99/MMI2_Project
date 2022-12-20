@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ImageTracking.unity
     guid: 52b1eb11bd9fefc45a9e602b3014def9
+  - enabled: 0
+    path: Assets/Scenes/PhotonTutorialScene.unity
+    guid: 476a7669fba4c25408fb059e2c18db88
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: a8e3719413ce5224f8b7838596bd1382, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: ffdbeb1bb40c1a346a2df70b3b25097a, type: 2}

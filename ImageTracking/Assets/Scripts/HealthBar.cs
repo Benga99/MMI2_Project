@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 
-public class HealthBar : MonoBehaviourPunCallbacks, IPunObservable
+public class HealthBar : MonoBehaviourPunCallbacks
 {
     public string identifier;
     public Slider slider;
@@ -55,6 +55,7 @@ public class HealthBar : MonoBehaviourPunCallbacks, IPunObservable
 
     
     // This is called every time Photon updates.
+    /*
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
         Debug.Log("OnPhotonSerializeView");
@@ -62,27 +63,27 @@ public class HealthBar : MonoBehaviourPunCallbacks, IPunObservable
         if (stream.IsWriting)
         {
             Debug.Log("Writing");
-            if (identifier == "enemy")
-            {
+            //if (identifier == "enemy")
+           //{
                 // Here we send the current health to the stream.
                 stream.SendNext(health);
                 Debug.Log("sent " + health);
-            }
+            //}
         }
         // If we are not the owner, we just want to receive the new value and show it accordingly.
         else {
             // Here we set the local health variable to the one we got back form the stream. What we get from the stream is simple bits/bytes, so we first have to cast it to float with the '(float)' function.
             Debug.Log("Reading");
-            if (identifier == "me")
-            {
+            //if (identifier == "me")
+            //{
                 health = (int)stream.ReceiveNext();
                 Debug.Log("got " + health);
                 slider.value = health;
                 this.health = (int)slider.value;
                 fill.color = gradient.Evaluate(slider.normalizedValue);
-            }
+            //}
         }
-        
     }
+    */
     
 }

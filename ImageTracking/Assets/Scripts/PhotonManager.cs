@@ -12,7 +12,8 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     /// <summary>
     /// This is a reference to the playerPrefab, that we have saved in our Resources folder. This will be spawned into the scene for each new client connecting.
     /// </summary>
-    public GameObject playerPrefab;
+    public GameObject manager;
+    public GameObject player;
     public TextMeshProUGUI debugText;
 
     // Called when we start the application/scene.
@@ -43,7 +44,8 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         // This spawns the playerPrefab (our character) into the scene at the origin of the scene (0,0,0). 
-        //PhotonNetwork.Instantiate(playerPrefab.name, Vector3.zero, Quaternion.identity);
+        //PhotonNetwork.Instantiate(player.name, Vector3.zero, Quaternion.identity);
+        //PhotonNetwork.Instantiate(manager.name, Vector3.zero, Quaternion.identity);
         debugText.text = "Joined the room!";
     }
 
