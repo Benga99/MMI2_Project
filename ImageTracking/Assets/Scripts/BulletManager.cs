@@ -42,6 +42,7 @@ public class BulletManager : MonoBehaviour, IPunObservable
         GameObject bullet = Instantiate(bulletPrefab, Vector3.zero, Quaternion.identity);
         bullet.transform.eulerAngles = new Vector3(90, 0, -Camera.main.transform.eulerAngles.y);
         StartCoroutine(moveBullet(bullet));
+        Debug.Log("PEW PEW");
 
         ray = Camera.main.ViewportPointToRay(new Vector3(0.5F, 0.5F, 0));
 
@@ -98,7 +99,7 @@ public class BulletManager : MonoBehaviour, IPunObservable
         // If we are the owner of this character, we are allowed to write something to the stream that gets send to all other clients.
         if (stream.IsWriting)
         {
-            debugText.text += "Sent Enemy Health: " + healthBarEnemy.health;
+            //debugText.text += "Sent Enemy Health: " + healthBarEnemy.health;
             // Here we send the current health to the stream.
             Debug.Log("sent " + healthBarEnemy.health);
             stream.SendNext(healthBarEnemy.health);
@@ -107,7 +108,7 @@ public class BulletManager : MonoBehaviour, IPunObservable
         else
         {
             int newHealth = (int)stream.ReceiveNext();
-            debugText.text += "Received own Health: " + newHealth;
+            //debugText.text += "Received own Health: " + newHealth;
             Debug.Log("received " + newHealth);
             // Here we set the local health variable to the one we got back form the stream. What we get from the stream is simple bits/bytes, so we first have to cast it to float with the '(float)' function.
             //healthBarMe.health = (int)stream.ReceiveNext();

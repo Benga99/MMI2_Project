@@ -19916,8 +19916,8 @@ struct LobbyMainPanel_t82305AC104F827D67827F2DBB719FE1056C58596  : public MonoBe
 // PhotonManager
 struct PhotonManager_tE7B7BB65B400FA3711AD3933F030339B19AB8701  : public MonoBehaviourPunCallbacks_t0B3C6A2FD0A09450A8505ACD42A647F3BCE6D783
 {
-	// UnityEngine.GameObject PhotonManager::playerPrefab
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___playerPrefab_5;
+	// UnityEngine.GameObject PhotonManager::manager
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___manager_5;
 	// TMPro.TextMeshProUGUI PhotonManager::debugText
 	TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* ___debugText_6;
 };
@@ -22432,7 +22432,7 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6959[3] =
 	static_cast<int32_t>(offsetof(InputManager_t29A2200021AE0E0EB6F34CB1B9DF031B3AE02677, ___OnStartTouch_5)),static_cast<int32_t>(offsetof(InputManager_t29A2200021AE0E0EB6F34CB1B9DF031B3AE02677, ___touchControls_6)),static_cast<int32_t>(offsetof(InputManager_t29A2200021AE0E0EB6F34CB1B9DF031B3AE02677, ___OnEndTouch_7)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6960[2] = 
 {
-	static_cast<int32_t>(offsetof(PhotonManager_tE7B7BB65B400FA3711AD3933F030339B19AB8701, ___playerPrefab_5)),static_cast<int32_t>(offsetof(PhotonManager_tE7B7BB65B400FA3711AD3933F030339B19AB8701, ___debugText_6)),};
+	static_cast<int32_t>(offsetof(PhotonManager_tE7B7BB65B400FA3711AD3933F030339B19AB8701, ___manager_5)),static_cast<int32_t>(offsetof(PhotonManager_tE7B7BB65B400FA3711AD3933F030339B19AB8701, ___debugText_6)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6961[4] = 
 {
 	static_cast<int32_t>(offsetof(PhotonPlayerControl_t7EE257B6DF75B7CDC083947A8DF02FF2CED61EB0, ___charControl_5)),static_cast<int32_t>(offsetof(PhotonPlayerControl_t7EE257B6DF75B7CDC083947A8DF02FF2CED61EB0, ___healthText_6)),static_cast<int32_t>(offsetof(PhotonPlayerControl_t7EE257B6DF75B7CDC083947A8DF02FF2CED61EB0, ___speed_7)),static_cast<int32_t>(offsetof(PhotonPlayerControl_t7EE257B6DF75B7CDC083947A8DF02FF2CED61EB0, ___health_8)),};

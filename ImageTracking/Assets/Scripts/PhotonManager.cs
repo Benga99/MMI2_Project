@@ -13,7 +13,7 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     /// This is a reference to the playerPrefab, that we have saved in our Resources folder. This will be spawned into the scene for each new client connecting.
     /// </summary>
     public GameObject manager;
-    public GameObject player;
+    //public GameObject player;
     public TextMeshProUGUI debugText;
 
     // Called when we start the application/scene.
